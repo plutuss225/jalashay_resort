@@ -1,0 +1,1 @@
+# jalashay_resort
