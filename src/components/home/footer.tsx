@@ -14,7 +14,7 @@ export function Footer() {
                 alt="Jalashay Resort"
                 width={150}
                 height={54}
-                style={{ width: "auto" }}
+                style={{ width: "auto", height: "auto" }}
                 className="h-12 w-auto object-contain"
               />
             </div>

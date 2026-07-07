@@ -65,7 +65,7 @@ export function Nav() {
             alt="Jalashay Resort"
             width={100}
             height={36}
-            style={{ width: "auto" }}
+            style={{ width: "auto", height: "auto" }}
             className={`h-9 w-auto object-contain transition-all duration-300 ${!isLight && !menuOpen ? "brightness-0 invert" : ""}`}
             priority
           />
