@@ -2,16 +2,16 @@
 import spa from "@/assets/spa.jpg";
 import dining from "@/assets/dining.jpg";
 import hero from "@/assets/hero.jpg";
-import image020A6170Webp from "@/assets/020A6170.webp";
+import image020A6170Webp from "@/assets/jalashay-resort-room-vista.webp";
 import slider5 from "@/assets/slider-5.webp";
 import weddingLawn from "@/assets/wedding-lawn.webp";
 
 // Room Images
-import room1 from "@/assets/roomImages/020A6091.webp";
-import room2 from "@/assets/roomImages/020A6097.webp";
-import room3 from "@/assets/roomImages/020A6099.webp";
-import room4 from "@/assets/roomImages/020A6152.webp";
-import room5 from "@/assets/roomImages/020A6170.webp";
+import room1 from "@/assets/roomImages/heritage-villa-interior-1.webp";
+import room2 from "@/assets/roomImages/heritage-villa-interior-2.webp";
+import room3 from "@/assets/roomImages/heritage-villa-interior-3.webp";
+import room4 from "@/assets/roomImages/heritage-villa-interior-4.webp";
+import room5 from "@/assets/roomImages/heritage-villa-interior-5.webp";
 
 import roomImg1 from "@/assets/roomImages/JV_07938.jpg";
 import roomImg2 from "@/assets/roomImages/JV_07939.jpg";
@@ -21,28 +21,28 @@ import roomImg5 from "@/assets/roomImages/JV_08050.jpg";
 import roomImg6 from "@/assets/roomImages/JV_08056.jpg";
 import roomImg7 from "@/assets/roomImages/JV_08059.jpg";
 
-import cottageImg1 from "@/assets/couple-cottage-images/020A6516.jpg";
-import cottageImg2 from "@/assets/couple-cottage-images/JV_07988 (1).jpg";
-import cottageImg3 from "@/assets/couple-cottage-images/JV_07988.jpg";
-import cottageImg4 from "@/assets/couple-cottage-images/JV_07994.jpg";
-import cottageImg5 from "@/assets/couple-cottage-images/JV_07995 - Copy.jpg";
+import cottageImg1 from "@/assets/couple-cottage-images/couple-cottage-interior-1.jpg";
+import cottageImg2 from "@/assets/couple-cottage-images/couple-cottage-interior-2.jpg";
+import cottageImg3 from "@/assets/couple-cottage-images/couple-cottage-interior-3.jpg";
+import cottageImg4 from "@/assets/couple-cottage-images/couple-cottage-interior-4.jpg";
+import cottageImg5 from "@/assets/couple-cottage-images/couple-cottage-interior-5.jpg";
 
 // Home Images
-import home1 from "@/assets/home_images/020A5924.webp";
-import home2 from "@/assets/home_images/020A5930.webp";
-import home3 from "@/assets/home_images/020A5959.webp";
-import home4 from "@/assets/home_images/020A6018.webp";
-import home5 from "@/assets/home_images/020A6056.webp";
-import home6 from "@/assets/home_images/020A6228.webp";
-import home7 from "@/assets/home_images/020A6231.webp";
-import home8 from "@/assets/home_images/020A6236.webp";
-import home9 from "@/assets/home_images/020A6238.webp";
+import home1 from "@/assets/home_images/resort-home-1.webp";
+import home2 from "@/assets/home_images/resort-home-2.webp";
+import home3 from "@/assets/home_images/resort-home-3.webp";
+import home4 from "@/assets/home_images/resort-home-4.webp";
+import home5 from "@/assets/home_images/resort-home-5.webp";
+import home6 from "@/assets/home_images/resort-home-6.webp";
+import home7 from "@/assets/home_images/resort-home-7.webp";
+import home8 from "@/assets/home_images/resort-home-8.webp";
+import home9 from "@/assets/home_images/resort-home-9.webp";
 
 // Slider Images
-import sliderImg1 from "@/assets/sliderImage/020A6063.webp";
-import sliderImg2 from "@/assets/sliderImage/020A6071.webp";
-import sliderImg3 from "@/assets/sliderImage/020A6269.webp";
-import sliderImg4 from "@/assets/sliderImage/020A6307.webp";
+import sliderImg1 from "@/assets/sliderImage/slider-view-1.webp";
+import sliderImg2 from "@/assets/sliderImage/slider-view-2.webp";
+import sliderImg3 from "@/assets/sliderImage/slider-view-3.webp";
+import sliderImg4 from "@/assets/sliderImage/slider-view-4.webp";
 import slider1 from "@/assets/sliderImage/slider-1.webp";
 import slider2 from "@/assets/sliderImage/slider-2.webp";
 import slider3 from "@/assets/sliderImage/slider-3.webp";
@@ -56,16 +56,16 @@ export interface MediaItem {
 
 export const galleryMedia: MediaItem[] = [
   // Videos from public folder
-  { type: "video", src: "/Website_01.webm", alt: "Jalashay Lakeside View" },
-  { type: "video", src: "/Website_04.webm", alt: "Lakeside Lawn Sunset" },
-  { type: "video", src: "/hero_bg.mp4", alt: "Resort Walkthrough Video" },
-  { type: "video", src: "/trees.webm", alt: "Grove Canopy Video" },
-  { type: "video", src: "/Website_03.webm", alt: "Tranquil Water Vista" },
-  { type: "video", src: "/Website_05.webm", alt: "Evening Lawn Celebrations" },
-  { type: "video", src: "/Website_08.webm", alt: "Resort Pathways Walk" },
-  { type: "video", src: "/Website_09.webm", alt: "Heritage Architecture Tour" },
-  { type: "video", src: "/Website_010.webm", alt: "Lakeside Breeze Video" },
-  { type: "video", src: "/Website_Video_02.webm", alt: "Resort drone aerial flight" },
+  { type: "video", src: "/jalashay-resort-lake-view.webm", alt: "Jalashay Lakeside View" },
+  { type: "video", src: "/jalashay-resort-lawn-sunset.webm", alt: "Lakeside Lawn Sunset" },
+  { type: "video", src: "/jalashay-resort-hero-background.mp4", alt: "Resort Walkthrough Video" },
+  { type: "video", src: "/jalashay-resort-trees.webm", alt: "Grove Canopy Video" },
+  { type: "video", src: "/jalashay-resort-tranquil-water-vista.webm", alt: "Tranquil Water Vista" },
+  { type: "video", src: "/jalashay-resort-evening-celebrations.webm", alt: "Evening Lawn Celebrations" },
+  { type: "video", src: "/jalashay-resort-pathways-walk.webm", alt: "Resort Pathways Walk" },
+  { type: "video", src: "/jalashay-resort-heritage-architecture-tour.webm", alt: "Heritage Architecture Tour" },
+  { type: "video", src: "/jalashay-resort-lakeside-breeze.webm", alt: "Lakeside Breeze Video" },
+  { type: "video", src: "/jalashay-resort-drone-aerial-flight.webm", alt: "Resort drone aerial flight" },
 
   // Images
   { type: "image", src: spa, alt: "Wellness Spa Sanctuary" },

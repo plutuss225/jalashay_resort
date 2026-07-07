@@ -21,15 +21,25 @@ function useParallax() {
     setIsMobile(mobile);
     if (mobile) return; // skip scroll listener on mobile
 
+    let ticking = false;
     const onScroll = () => {
-      const el = sectionRef.current;
-      if (!el) return;
-      const rect = el.getBoundingClientRect();
-      if (rect.bottom < 0 || rect.top > window.innerHeight) return;
-      setOffset(rect.top * -0.18);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const el = sectionRef.current;
+          if (el) {
+            const rect = el.getBoundingClientRect();
+            if (rect.bottom >= 0 && rect.top <= window.innerHeight) {
+              setOffset(rect.top * -0.18);
+            }
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
+    // Run once on mount to set initial position
     onScroll();
     return () => window.removeEventListener("scroll", onScroll);
   }, []);

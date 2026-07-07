@@ -10,7 +10,7 @@ import Image from "next/image";
 
 import poolImg from "@/assets/outsideImages/020A6311.jpg";
 import spaImg from "@/assets/spa.jpg";
-import cinemaImg from "@/assets/madrid-spain-seats-and-screen-of-the-open-air-cinema-cineplaza-in-the-plaza-de-matadero.webp";
+import cinemaImg from "@/assets/open-air-cinema.webp";
 
 export function Experiences() {
   const items = [

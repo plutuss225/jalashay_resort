@@ -1,6 +1,6 @@
 import Image from "next/image";
 import img1 from "@/assets/outsideImages/020A6512.jpg";
-import img2 from "@/assets/020A6391.jpg";
+import img2 from "@/assets/jalashay-resort-exterior-6391.jpg";
 import img3 from "@/assets/sliderImage/slider-5.webp";
 
 export function Dining() {

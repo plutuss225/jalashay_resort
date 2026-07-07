@@ -5,7 +5,7 @@ import villa from "@/assets/wedding-lawn.webp";
 
 import diningJpg from "@/assets/dining.jpg";
 import spaJpg from "@/assets/spa.jpg";
-import image020A6170Webp from "@/assets/020A6170.webp";
+import image020A6170Webp from "@/assets/jalashay-resort-room-vista.webp";
 
 export interface ExperienceData {
   slug: string;

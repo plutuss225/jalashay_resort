@@ -16,7 +16,16 @@ export function Nav() {
 
   useEffect(() => {
     if (!isHome) return;
-    const on = () => setScrolled(window.scrollY > 40);
+    let ticking = false;
+    const on = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 40);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
     window.addEventListener("scroll", on, { passive: true });
     // Reset scroll state on mount/pathname change
     setScrolled(window.scrollY > 40);
@@ -77,13 +86,6 @@ export function Nav() {
             className="relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:scale-x-0 after:bg-[color:var(--gold)] after:transition-transform after:duration-300 hover:after:scale-x-100 transition"
           >
             Experiences
-          </Link>
-          <Link
-            href="/#dining"
-            onClick={(e) => handleScrollClick(e, "dining")}
-            className="relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:scale-x-0 after:bg-[color:var(--gold)] after:transition-transform after:duration-300 hover:after:scale-x-100 transition"
-          >
-            Dining
           </Link>
           <Link
             href="/#gallery"

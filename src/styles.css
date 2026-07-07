@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Marcellus&family=Raleway:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 @source "../src";
 @import "tw-animate-css";
@@ -56,10 +55,6 @@
   --destructive-foreground: oklch(0.984 0.003 247.858);
   --popover: var(--card);
   --popover-foreground: var(--card-foreground);
-
-  --font-display: "Marcellus", serif;
-  --font-sans: "Raleway", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Cardo", Georgia, serif;
 
   --shadow-soft: 0 20px 60px -30px oklch(0.30 0.04 45 / 0.25);
   --gradient-gold: linear-gradient(135deg, oklch(0.78 0.15 75), oklch(0.68 0.17 60));

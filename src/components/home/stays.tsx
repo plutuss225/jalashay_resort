@@ -2,10 +2,10 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import room1 from "@/assets/roomImages/020A6091.webp";
-import room2 from "@/assets/couple-cottage-images/JV_07988 (1).jpg";
+import room1 from "@/assets/roomImages/heritage-villa-interior-1.webp";
+import room2 from "@/assets/couple-cottage-images/couple-cottage-interior-2.jpg";
 import room3 from "@/assets/roomImages/JV_08056.jpg";
-import room4 from "@/assets/roomImages/020A6099.webp";
+import room4 from "@/assets/roomImages/heritage-villa-interior-3.webp";
 
 export function Stays() {
   const rooms = [

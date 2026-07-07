@@ -1,22 +1,22 @@
-import room1 from "@/assets/roomImages/020A6091.webp";
-import room2 from "@/assets/couple-cottage-images/JV_07988 (1).jpg";
+import room1 from "@/assets/roomImages/heritage-villa-interior-1.webp";
+import room2 from "@/assets/couple-cottage-images/couple-cottage-interior-2.jpg";
 import room3 from "@/assets/roomImages/JV_08056.jpg";
-import room4 from "@/assets/roomImages/020A6152.webp";
-import room5 from "@/assets/roomImages/020A6170.webp";
+import room4 from "@/assets/roomImages/heritage-villa-interior-4.webp";
+import room5 from "@/assets/roomImages/heritage-villa-interior-5.webp";
 import room6 from "@/assets/roomImages/JV_07938.jpg";
 import room7 from "@/assets/roomImages/JV_07939.jpg";
 import room8 from "@/assets/roomImages/JV_07995.jpg";
 import room9 from "@/assets/roomImages/JV_08023.jpg";
 import room10 from "@/assets/roomImages/JV_08050.jpg";
 import room11 from "@/assets/roomImages/JV_08059.jpg";
-import room12 from "@/assets/roomImages/020A6097.webp";
-import room13 from "@/assets/roomImages/020A6099.webp";
+import room12 from "@/assets/roomImages/heritage-villa-interior-2.webp";
+import room13 from "@/assets/roomImages/heritage-villa-interior-3.webp";
 
 // Couple Cottage specific images
-import cc1 from "@/assets/couple-cottage-images/020A6516.jpg";
-import cc2 from "@/assets/couple-cottage-images/JV_07988 (1).jpg";
-import cc3 from "@/assets/couple-cottage-images/JV_07994.jpg";
-import cc4 from "@/assets/couple-cottage-images/JV_07995 - Copy.jpg";
+import cc1 from "@/assets/couple-cottage-images/couple-cottage-interior-1.jpg";
+import cc2 from "@/assets/couple-cottage-images/couple-cottage-interior-2.jpg";
+import cc3 from "@/assets/couple-cottage-images/couple-cottage-interior-4.jpg";
+import cc4 from "@/assets/couple-cottage-images/couple-cottage-interior-5.jpg";
 
 const sharedGallery = [room6, room7, room8, room9, room10, room11, room12, room13, room5];
 

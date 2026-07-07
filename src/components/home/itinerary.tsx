@@ -1,14 +1,14 @@
 import React from "react";
 import Image from "next/image";
 
-import arrivalImg from "@/assets/couple-talking-to-receptionist-at-hotel-lobby.webp";
+import arrivalImg from "@/assets/hotel-lobby-reception.webp";
 import poolImg from "@/assets/outsideImages/020A6311.jpg";
 import teaImg from "@/assets/highTea.webp";
 import foodImage from "@/assets/food_Image.jpg"
-import cinemaImg from "@/assets/madrid-spain-seats-and-screen-of-the-open-air-cinema-cineplaza-in-the-plaza-de-matadero.webp";
-import trekImg from "@/assets/DJI_0586.jpg.jpeg";
-import karaokeImg from "@/assets/black-microphone-karaoke-club-remote-controller-melon-strawberry-soda-drinks-yellow-tambourine-screen-singing-125689156.webp";
-import breakfastImg from "@/assets/020A6320.jpg";
+import cinemaImg from "@/assets/open-air-cinema.webp";
+import trekImg from "@/assets/jalashay-resort-drone-view-1.jpeg";
+import karaokeImg from "@/assets/karaoke-club.webp";
+import breakfastImg from "@/assets/jalashay-resort-exterior-6320.jpg";
 import checkoutImg from "@/assets/sliderImage/slider-4.webp";
 
 const schedule = [
