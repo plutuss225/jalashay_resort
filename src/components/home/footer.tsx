@@ -49,7 +49,7 @@ export function Footer() {
               Reservations
             </p>
             <p className="mt-4 font-light leading-relaxed text-primary-foreground/80">
-              stay@jalashay.com
+              info@jalashayresort.com
               <br />
               <a href="tel:+917378818818" className="hover:text-white transition-colors">+91 737 881 8818</a>
             </p>
