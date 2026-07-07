@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Marcellus&family=Raleway:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-gold: var(--gold);
+  --color-cream: var(--cream);
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
+}
+
+:root {
+  --radius: 9999px;
+  /* warm cream light theme with gold accents */
+  --background: oklch(0.98 0.02 85);          /* soft cream */
+  --foreground: oklch(0.24 0.03 45);          /* deep espresso */
+  --card: oklch(0.995 0.01 85);
+  --card-foreground: oklch(0.24 0.03 45);
+  --primary: oklch(0.30 0.04 45);             /* dark brown */
+  --primary-foreground: oklch(0.98 0.02 85);
+  --secondary: oklch(0.95 0.03 80);
+  --secondary-foreground: oklch(0.28 0.03 45);
+  --muted: oklch(0.94 0.02 80);
+  --muted-foreground: oklch(0.5 0.03 55);
+  --accent: oklch(0.74 0.16 70);              /* warm gold/amber */
+  --accent-foreground: oklch(0.22 0.03 45);
+  --gold: oklch(0.74 0.16 70);
+  --cream: oklch(0.98 0.02 85);
+  --border: oklch(0.9 0.02 75);
+  --input: oklch(0.9 0.02 75);
+  --ring: oklch(0.74 0.16 70);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --popover: var(--card);
+  --popover-foreground: var(--card-foreground);
+
+  --font-display: "Marcellus", serif;
+  --font-sans: "Raleway", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cardo", Georgia, serif;
+
+  --shadow-soft: 0 20px 60px -30px oklch(0.30 0.04 45 / 0.25);
+  --gradient-gold: linear-gradient(135deg, oklch(0.78 0.15 75), oklch(0.68 0.17 60));
+  --gradient-fade: linear-gradient(180deg, transparent, oklch(0.98 0.02 85 / 0.9) 70%, oklch(0.98 0.02 85));
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; letter-spacing: -0.01em; }
+  em { font-style: italic; color: var(--gold); font-family: var(--font-serif); }
+}
+
+@utility parallax {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@utility btn-gold {
+  background-image: var(--gradient-gold);
+  color: oklch(0.22 0.03 45);
+  border-radius: 9999px;
+  padding: 0.85rem 1.75rem;
+  font-weight: 500;
+  transition: transform .3s ease, box-shadow .3s ease;
+  box-shadow: 0 10px 30px -12px oklch(0.74 0.16 70 / 0.5);
+}
+@utility btn-gold-hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 34px -12px oklch(0.74 0.16 70 / 0.65);
+}
+
+@media (max-width: 768px) {
+  .parallax { background-attachment: scroll; }
+}
+
+/* ── Mobile menu animations ─────────────────────────────── */
+@keyframes menuFadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes menuFadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-10px); }
+}
+@keyframes menuItemIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+
+video::-webkit-media-controls {
+  display: none !important;
+}
+
+video::-webkit-media-controls-panel {
+  display: none !important;
+}
+
+video::-webkit-media-controls-play-button {
+  display: none !important;
+}
+
+video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+}
