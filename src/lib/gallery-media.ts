@@ -1,6 +1,5 @@
 // Basic core assets
 import spa from "@/assets/spa.jpg";
-import dining from "@/assets/dining.jpg";
 import hero from "@/assets/hero.jpg";
 import image020A6170Webp from "@/assets/jalashay-resort-room-vista.webp";
 import slider5 from "@/assets/slider-5.webp";
@@ -58,7 +57,6 @@ export const galleryMedia: MediaItem[] = [
   // Videos from public folder
   { type: "video", src: "/jalashay-resort-lake-view.webm", alt: "Jalashay Lakeside View" },
   { type: "video", src: "/jalashay-resort-lawn-sunset.webm", alt: "Lakeside Lawn Sunset" },
-  { type: "video", src: "/jalashay-resort-hero-background.mp4", alt: "Resort Walkthrough Video" },
   { type: "video", src: "/jalashay-resort-trees.webm", alt: "Grove Canopy Video" },
   { type: "video", src: "/jalashay-resort-tranquil-water-vista.webm", alt: "Tranquil Water Vista" },
   { type: "video", src: "/jalashay-resort-evening-celebrations.webm", alt: "Evening Lawn Celebrations" },
@@ -69,7 +67,6 @@ export const galleryMedia: MediaItem[] = [
 
   // Images
   { type: "image", src: spa, alt: "Wellness Spa Sanctuary" },
-  { type: "image", src: dining, alt: "Lakeside Dining Restaurant" },
   { type: "image", src: hero, alt: "Resort Heritage Frontage" },
   { type: "image", src: weddingLawn, alt: "Wedding Lawn Setup" },
   { type: "image", src: image020A6170Webp, alt: "Resort Room Vista" },
