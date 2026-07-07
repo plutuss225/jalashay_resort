@@ -1,5 +1,6 @@
 // Server Component
 import Image from "next/image";
+import Link from "next/link";
 import { MapPin } from "lucide-react";
 
 export function Footer() {
@@ -58,15 +59,18 @@ export function Footer() {
         <div className="pt-10 flex flex-col md:flex-row items-center justify-between text-xs text-primary-foreground/50 gap-4">
           <span>© {new Date().getFullYear()} Jalashay Resort. All rights reserved.</span>
           <div className="flex gap-8 uppercase tracking-[0.2em]">
-            <a href="#" className="hover:text-[color:var(--gold)]">
+            <a href="https://www.instagram.com/jalashayexperiences?igsh=Y2t5ZmF3azJ6Nmpx" target="_blank" rel="noopener noreferrer" className="hover:text-[color:var(--gold)]">
               Instagram
             </a>
-            <a href="#" className="hover:text-[color:var(--gold)]">
-              Privacy
+            <a href="https://www.facebook.com/people/Jalashay-Resort/61578448988796/?rdid=oNaznBWEbRkVib8H&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F196Yxy8Zqd%2F" target="_blank" rel="noopener noreferrer" className="hover:text-[color:var(--gold)]">
+              Facebook
             </a>
-            <a href="#" className="hover:text-[color:var(--gold)]">
-              Press
-            </a>
+            <Link href="/privacy" className="hover:text-[color:var(--gold)]">
+              Privacy & Policy
+            </Link>
+            <Link href="/faq" className="hover:text-[color:var(--gold)]">
+              FAQ
+            </Link>
           </div>
         </div>
       </div>
