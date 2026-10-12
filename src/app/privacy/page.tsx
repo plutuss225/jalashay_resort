@@ -35,7 +35,11 @@ export default function PrivacyPage() {
           </div>
           <h2 className="font-display text-2xl text-foreground mt-8 mb-4">Contact Us</h2>
           <p>
-            If you have any questions about this Privacy Policy, please contact us at info@jalashayresort.com.
+            If you have any questions about this Privacy Policy, please contact us at{" "}
+            <a href="mailto:thejalashayresort@gmail.com" className="underline hover:text-foreground transition-colors">
+              thejalashayresort@gmail.com
+            </a>
+            .
           </p>
         </div>
       </div>

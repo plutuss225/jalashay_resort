@@ -50,7 +50,9 @@ export function Footer() {
               Reservations
             </p>
             <p className="mt-4 font-light leading-relaxed text-primary-foreground/80">
-              info@jalashayresort.com
+              <a href="mailto:thejalashayresort@gmail.com" className="hover:text-white transition-colors">
+                thejalashayresort@gmail.com
+              </a>
               <br />
               <a href="tel:+917378818818" className="hover:text-white transition-colors">+91 737 881 8818</a>
             </p>
