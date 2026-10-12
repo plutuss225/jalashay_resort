@@ -75,6 +75,7 @@ const jsonLd = [
       addressCountry: "IN"
     },
     telephone: "+917378818818",
+    email: "thejalashayresort@gmail.com",
     url: "https://jalashay.com",
     priceRange: "₹₹₹"
   },
@@ -84,9 +85,11 @@ const jsonLd = [
     name: "Jalashay Resort",
     url: "https://jalashay.com",
     logo: "https://jalashay.com/Jalashay_Logo.webp",
+    email: "thejalashayresort@gmail.com",
     contactPoint: {
       "@type": "ContactPoint",
       telephone: "+917378818818",
+      email: "thejalashayresort@gmail.com",
       contactType: "Reservations",
       areaServed: "IN"
     }
