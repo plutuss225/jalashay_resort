@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { galleryMedia } from "@/lib/gallery-media";
+import { LazyVideo } from "@/components/ui/lazy-video";
 
 export default function GalleryPage() {
   return (
@@ -30,17 +31,13 @@ export default function GalleryPage() {
             return (
               <div
                 key={i}
-                className={`overflow-hidden rounded-2xl relative group shadow-sm bg-secondary ${gridSpanClass}`}
+                className={`overflow-hidden rounded-2xl relative group shadow-sm bg-secondary/30 ${gridSpanClass}`}
               >
                 {item.type === "video" ? (
-                  <video
+                  <LazyVideo
                     src={item.src}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    suppressHydrationWarning
+                    alt={item.alt}
+                    className="group-hover:scale-105 transition-transform duration-700"
                   />
                 ) : (
                   <Image
@@ -51,7 +48,7 @@ export default function GalleryPage() {
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                 )}
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 z-10">
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 z-10 pointer-events-none">
                   <span className="text-white text-xs uppercase tracking-widest font-medium">
                     {item.alt}
                   </span>

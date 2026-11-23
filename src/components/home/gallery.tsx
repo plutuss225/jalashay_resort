@@ -3,10 +3,16 @@
 import Link from "next/link";
 import Image from "next/image";
 import { galleryMedia } from "@/lib/gallery-media";
+import { LazyVideo } from "@/components/ui/lazy-video";
 
 export function Gallery() {
-  // Show first 7 items on the homepage
-  const previewMedia = galleryMedia.slice(0, 7);
+  // Show a balanced mix on homepage (1 featured video + 6 photos)
+  // to avoid downloading multiple large video files on initial homepage load
+  const featuredVideo = galleryMedia.find((m) => m.type === "video");
+  const showcaseImages = galleryMedia.filter((m) => m.type === "image").slice(0, 6);
+  const previewMedia = featuredVideo
+    ? [featuredVideo, ...showcaseImages]
+    : galleryMedia.slice(0, 7);
 
   return (
     <section id="gallery" className="py-28 px-6 lg:px-10">
@@ -39,27 +45,24 @@ export function Gallery() {
             return (
               <div
                 key={i}
-                className={`overflow-hidden rounded-2xl relative group shadow-sm ${gridSpanClass}`}
+                className={`overflow-hidden rounded-2xl relative group shadow-sm bg-secondary/30 ${gridSpanClass}`}
               >
                 {item.type === "video" ? (
-                  <video
+                  <LazyVideo
                     src={item.src}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1500ms]"
-                    suppressHydrationWarning
+                    alt={item.alt}
+                    className="group-hover:scale-105 transition-transform duration-[1500ms]"
                   />
                 ) : (
                   <Image
                     src={item.src}
                     alt={item.alt || ""}
-                    fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-[1500ms]"
                   />
                 )}
-                <div className="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 z-10">
+                <div className="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 z-10 pointer-events-none">
                   <span className="text-white text-xs uppercase tracking-widest font-medium">
                     {item.alt}
                   </span>
