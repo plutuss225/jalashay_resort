@@ -7,20 +7,39 @@ const heroBgVideo = "/Website_01.mp4";
 
 export function Hero() {
   const { openBookingModal } = useBookingModal();
+  const sectionRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  // Autoplay video reliably across browsers
+  // Autoplay video and pause when out of view to conserve bandwidth and CPU
   useEffect(() => {
     const video = videoRef.current;
-    if (!video) return;
+    const section = sectionRef.current;
+    if (!video || !section) return;
+
     video.muted = true;
-    video.play().catch(() => { });
+    video.play().catch(() => {});
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            video.play().catch(() => {});
+          } else {
+            video.pause();
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
   }, []);
 
   return (
-    <section className="relative h-[100svh] overflow-hidden">
+    <section ref={sectionRef} className="relative h-[100svh] overflow-hidden">
       {/* ── Background ── */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 bg-black">
         <video
           ref={videoRef}
           src={heroBgVideo}
@@ -32,7 +51,7 @@ export function Hero() {
           controlsList="nodownload noplaybackrate nofullscreen"
           disablePictureInPicture
           disableRemotePlayback
-          preload="auto"
+          preload="metadata"
           className="w-full h-full object-cover pointer-events-none"
           onError={(e) => console.error("Video failed to load:", e)}
           suppressHydrationWarning
