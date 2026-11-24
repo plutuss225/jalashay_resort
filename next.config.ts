@@ -4,9 +4,7 @@ const nextConfig: NextConfig = {
   compress: true, // Enables gzip compression for optimized assets
   reactStrictMode: true,
   images: {
-    formats: ['image/avif', 'image/webp'],
-    minimumCacheTTL: 31536000, // Cache optimized images for 1 year to avoid burning Vercel Fast Data Transfer
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
+    unoptimized: true, // Serve images directly as static files, completely bypassing Vercel Image Optimization compute and quotas
   },
   async headers() {
     return [
