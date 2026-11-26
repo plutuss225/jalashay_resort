@@ -50,30 +50,12 @@ export function BookingModalProvider({ children }: { children: React.ReactNode }
 
   const [success, setSuccess] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
+  const [lastWhatsappUrl, setLastWhatsappUrl] = useState("");
 
   const apiBaseUri = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5001";
 
-  // TanStack Query Mutation for submitting enquiries
-  const submitMutation = useMutation({
-    mutationFn: async (data: any) => {
-      const response = await fetch(`${apiBaseUri}/api/enquiries`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (!response.ok) {
-        const errData = await response.json();
-        throw new Error(errData.message || "Failed to submit enquiry");
-      }
-      return response.json();
-    },
-    onSuccess: (data, variables) => {
-      setSuccess(true);
-
-      const message = `New Booking Request:
+  const handleWhatsAppRedirect = (variables: any) => {
+    const message = `New Booking Request:
 Name: ${variables.name}
 Phone: ${variables.phoneNo}
 Category: ${variables.category}
@@ -82,24 +64,58 @@ Check-out: ${variables.checkOut}
 Adults: ${variables.guests}
 Children: ${variables.children}`;
 
-      const whatsappUrl = `https://wa.me/917378818818?text=${encodeURIComponent(message)}`;
-      window.open(whatsappUrl, "_blank");
+    const whatsappUrl = `https://wa.me/917378818818?text=${encodeURIComponent(message)}`;
+    setLastWhatsappUrl(whatsappUrl);
+    window.open(whatsappUrl, "_blank");
 
-      setFormData({
-        name: "",
-        phoneNo: "",
-        checkIn: "",
-        checkOut: "",
-        guests: 2,
-        children: 0,
+    setFormData({
+      name: "",
+      phoneNo: "",
+      checkIn: "",
+      checkOut: "",
+      guests: 2,
+      children: 0,
+    });
+  };
+
+  // TanStack Query Mutation for submitting enquiries
+  const submitMutation = useMutation({
+    mutationFn: async (data: any) => {
+      // 4-second timeout so user is not left waiting if backend is unreachable
+      const response = await fetch(`${apiBaseUri}/api/enquiries`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+        signal: AbortSignal.timeout(4000),
       });
+
+      if (!response.ok) {
+        const errData = await response.json().catch(() => ({}));
+        throw new Error(errData.message || "Failed to submit enquiry");
+      }
+      return response.json();
+    },
+    onSuccess: (_data, variables) => {
+      setSuccess(true);
+      handleWhatsAppRedirect(variables);
+
       // Auto close after success
       setTimeout(() => {
         setIsOpen(false);
-      }, 2500);
+      }, 3000);
     },
-    onError: (err: any) => {
-      setErrorMsg(err.message || "Something went wrong. Please check if backend is running.");
+    onError: (err: any, variables: any) => {
+      console.warn("Backend enquiry API unavailable, falling back to WhatsApp:", err);
+      // Still redirect to WhatsApp even if API is not working
+      setSuccess(true);
+      handleWhatsAppRedirect(variables);
+
+      // Auto close after redirect
+      setTimeout(() => {
+        setIsOpen(false);
+      }, 3500);
     },
   });
 
@@ -109,6 +125,7 @@ Children: ${variables.children}`;
     }
     setSuccess(false);
     setErrorMsg("");
+    setLastWhatsappUrl("");
     setIsOpen(true);
   };
 
@@ -165,8 +182,18 @@ Children: ${variables.children}`;
                 </div>
                 <h4 className="font-display text-2xl text-foreground">Enquiry Submitted!</h4>
                 <p className="text-sm text-muted-foreground mt-2 max-w-sm">
-                  Thank you. We have received your booking request and will contact you shortly.
+                  Thank you! Redirecting you to WhatsApp to connect with our team directly.
                 </p>
+                {lastWhatsappUrl && (
+                  <a
+                    href={lastWhatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-flex items-center gap-1.5 text-xs text-[color:var(--gold)] font-medium underline underline-offset-4 hover:opacity-80"
+                  >
+                    Click here if WhatsApp didn&apos;t open automatically →
+                  </a>
+                )}
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4 pt-4">
